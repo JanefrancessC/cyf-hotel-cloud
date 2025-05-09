@@ -18,10 +18,11 @@ const BOOKINGS_FILE = path.join(__dirname, "data", "fakeBookings.json");
 app.use(cors());
 app.use(express.json());
 
-// GET all bookings
 app.get("/", async (req, res) => {
   res.send("Welcome to CYF Hotel");
 });
+
+// GET all bookings
 app.get("/api/bookings", async (req, res) => {
   try {
     const data = await fs.readFile(BOOKINGS_FILE, "utf8");
