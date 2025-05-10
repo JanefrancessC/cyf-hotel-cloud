@@ -17,13 +17,11 @@ jobs:
         with:
           node-version: ${{ secrets.node_version }}
 
-      - name: Install dependencies
+      - name: Install dependencies and Build
         run: |
           cd client
           npm install
-
-      - name: Build Application
-        run: npm run build
+          npm run build
 
       - name: List directory structure (for debugging)
         run: ls -al build
