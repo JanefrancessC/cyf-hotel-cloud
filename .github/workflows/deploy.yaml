@@ -23,9 +23,6 @@ jobs:
           npm install
           npm run build
 
-      - name: List directory structure (for debugging)
-        run: ls -al build
-
       - name: Sync to S3
         uses: aws-actions/configure-aws-credentials@v1
         with:
