@@ -23,7 +23,7 @@ app.get("/", async (req, res) => {
 });
 
 // GET all bookings
-app.get("/api/bookings", async (req, res) => {
+app.get("/bookings", async (req, res) => {
   try {
     const data = await fs.readFile(BOOKINGS_FILE, "utf8");
     const bookings = JSON.parse(data);
@@ -35,7 +35,7 @@ app.get("/api/bookings", async (req, res) => {
 });
 
 // POST a new booking
-app.post("/api/bookings", async (req, res) => {
+app.post("/bookings", async (req, res) => {
   try {
     const {
       title,
